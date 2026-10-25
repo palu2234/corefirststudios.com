@@ -1,0 +1,33 @@
+---
+layout: default
+---
+{%- comment -%}
+  Splits the rendered policy at each <h2 so the table of contents is built from
+  its headings, and the phone-width copy of it can sit right after the intro.
+{%- endcomment -%}
+{%- assign parts = content | split: '<h2 ' -%}
+{%- capture toc -%}
+<ol>
+{%- for part in parts offset: 1 %}
+  {%- assign bits = part | split: '"' %}
+  {%- assign heading = part | split: '</h2>' | first | split: '">' | last %}
+  <li><a href="#{{ bits[1] }}">{{ heading }}</a></li>
+{%- endfor %}
+</ol>
+{%- endcapture -%}
+<div class="wrap policy">
+  <nav class="toc toc-side" aria-label="On this page">
+    <p class="toc-title">On this page</p>
+    {{ toc }}
+  </nav>
+  <article class="prose">
+{{ parts[0] }}
+    <details class="toc toc-mobile">
+      <summary>On this page</summary>
+      {{ toc }}
+    </details>
+{%- for part in parts offset: 1 %}
+<h2 {{ part }}
+{%- endfor %}
+  </article>
+</div>

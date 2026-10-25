@@ -1,0 +1,13 @@
+# Built by GitHub Pages (Jekyll) on every push to main.
+title: Core First Studios
+description: Core First Studios makes OnTrack, a workout tracker built for the gym floor. No account, no ads, and your data stays on your phone.
+url: https://corefirststudios.com
+email: support@corefirststudios.com
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+exclude:
+  - README.md
