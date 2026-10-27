@@ -5,7 +5,7 @@ description: How OnTrack handles your data. No account, no servers, no ads and n
 ---
 # OnTrack – Privacy Policy
 
-**Last updated: October 26, 2026**
+**Last updated: October 27, 2026**
 
 OnTrack ("the app") is a personal workout tracking app for iPhone and Android, developed by Michael Palummieri. This policy explains what data the app accesses, how it is used, and your rights as a user. It covers both OnTrack for iPhone (with its Apple Watch app) and OnTrack for Android.
 
@@ -99,7 +99,7 @@ Backups and exported files (CSV or OnTrack backup files) contain all your OnTrac
 
 ## OnTrack Pro purchases — Android
 
-OnTrack Pro is an optional one-time purchase made through Google Play. Google processes the payment under its own terms and privacy policy; we never receive your payment details. To know whether Pro is unlocked, the app asks Google Play which purchases your Google account holds and keeps the answer on your device. We don't receive or store any record of your purchase ourselves.
+OnTrack Pro is optional, sold through Google Play as a yearly subscription or a one-time lifetime purchase. Google processes the payment and manages the subscription under its own terms and privacy policy; we never receive your payment details. To know whether Pro is unlocked, the app asks Google Play which purchases and subscriptions your Google account holds and keeps the answer on your device. We don't receive or store any record of your purchase ourselves.
 
 ---
 
