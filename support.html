@@ -1,11 +1,11 @@
 ---
 layout: default
 title: OnTrack support
-description: Get help with OnTrack. Email support, and answers to common questions about backups, exports, heart-rate monitors and your data.
+description: Get help with OnTrack for iPhone and Android. Email support, and answers to common questions about availability, backups, exports, Apple Watch, heart-rate monitors and your data.
 ---
 <section class="page-head">
   <div class="wrap narrow">
-    <p class="eyebrow eyebrow-light">Support</p>
+    <p class="eyebrow eyebrow-light">OnTrack support</p>
     <h1>How can we help?</h1>
     <p class="lede">Email us with questions, bugs or ideas. We read every message and usually reply within a few days.</p>
     <a class="email-cta" href="mailto:{{ site.email }}">{{ site.email }}</a>
@@ -17,7 +17,7 @@ description: Get help with OnTrack. Email support, and answers to common questio
     <h2>Reporting a problem</h2>
     <p>These help us find it quickly:</p>
     <ul class="ticks">
-      <li>Your phone model, and its Android or iOS version</li>
+      <li>Your phone model, and its iOS or Android version (and your Apple Watch model, if the problem is on the watch)</li>
       <li>The OnTrack version, shown in the app's Settings</li>
       <li>What you did just before the problem</li>
       <li>A screenshot, if you can</li>
@@ -25,6 +25,10 @@ description: Get help with OnTrack. Email support, and answers to common questio
 
     <h2>Common questions</h2>
     <div class="faq">
+      <details>
+        <summary>Is OnTrack on iPhone and Android?</summary>
+        <p>Both, soon. OnTrack is coming to the App Store for iPhone, with an Apple Watch app, and to Google Play for Android. We'll link to both stores from the <a href="/ontrack">OnTrack page</a> as soon as they're live.</p>
+      </details>
       <details>
         <summary>Do I need an account?</summary>
         <p>No. OnTrack works without an account or sign-in. Your workouts are stored on your phone, and we never receive them.</p>
@@ -47,7 +51,15 @@ description: Get help with OnTrack. Email support, and answers to common questio
       </details>
       <details>
         <summary>How do I move my data to a new phone?</summary>
-        <p>On Android, turn on Back up to Google Drive in OnTrack's Settings, then install OnTrack on your new phone and restore from that backup. The same backup can move your data to OnTrack for iPhone. Android's own device backup also restores OnTrack when you set up a new Android phone, except for progress photos.</p>
+        <p>On iPhone, OnTrack backs up to your iCloud Drive automatically when iCloud Drive is on. Install OnTrack on your new iPhone and it offers to restore that backup the first time you open it.</p>
+        <p>On Android, turn on Back up to Google Drive in OnTrack's Settings, then install OnTrack on your new phone and restore from that backup. Android's own device backup also restores OnTrack when you set up a new Android phone, except for progress photos.</p>
+      </details>
+      <details>
+        <summary>Can I switch between iPhone and Android?</summary>
+        <p>Yes. Both apps read the same backup file, ontrack-backup.json.</p>
+        <p>From Android to iPhone: turn on Back up to Google Drive on your Android phone. Then on your iPhone, open OnTrack's Settings → Import Full Backup and choose that file from Google Drive.</p>
+        <p>From iPhone to Android: on your Android phone, sign in at icloud.com/iclouddrive, open the OnTrack folder and download ontrack-backup.json. Choose it when OnTrack asks if you're coming from another phone, or later in Settings → Import backup or shared workout.</p>
+        <p>Progress photos aren't included in backup files, so they stay on the phone they were taken on.</p>
       </details>
       <details>
         <summary>Can I export my workouts?</summary>
@@ -55,15 +67,20 @@ description: Get help with OnTrack. Email support, and answers to common questio
       </details>
       <details>
         <summary>Which heart-rate monitors work?</summary>
+        <p>On iPhone, an Apple Watch, AirPods Pro 3, or a Bluetooth heart-rate strap paired with your iPhone. AirPods and straps without a watch need iOS 26 or later.</p>
         <p>On Android, any Bluetooth heart-rate monitor that broadcasts heart rate: a chest strap, a Garmin watch with Broadcast Heart Rate turned on, or a Pixel Watch with heart-rate sharing turned on.</p>
       </details>
       <details>
-        <summary>Does OnTrack work with Health Connect or Apple Health?</summary>
-        <p>Yes, if you turn it on. On Android, OnTrack can save workouts, heart rate, weight and body fat to Health Connect, and bring in weight and body fat from your other apps. On iPhone, it works with Apple Health.</p>
+        <summary>Does OnTrack work with Apple Watch?</summary>
+        <p>Yes. OnTrack for iPhone comes with an Apple Watch app. It shows the workout running on your iPhone, lets you check off sets and adjust weight and reps with the Digital Crown, and records your heart rate during workouts and circuits.</p>
+      </details>
+      <details>
+        <summary>Does OnTrack work with Apple Health or Health Connect?</summary>
+        <p>Yes, if you turn it on. On iPhone, OnTrack can save workouts, heart rate, weight and body fat to Apple Health, and bring in your weight and body fat. On Android, it can save workouts, heart rate, weight and body fat to Health Connect, and bring in weight and body fat from your other apps.</p>
       </details>
       <details>
         <summary>How do I delete my data?</summary>
-        <p>Delete any workout, measurement or photo in the app, or uninstall OnTrack to erase everything on that phone. If you turned on Google Drive backup, also delete the OnTrack folder in your Drive. We never receive your data, so nothing is stored on our side.</p>
+        <p>Delete any workout, measurement or photo in the app, or uninstall OnTrack to erase everything on that phone. To remove backups too, delete the OnTrack folder in your iCloud Drive or Google Drive. We never receive your data, so nothing is stored on our side.</p>
       </details>
     </div>
 

@@ -5,7 +5,8 @@ Jekyll on every push to `main` and serves it at <https://corefirststudios.com>.
 
 | Page | File | URL |
 |---|---|---|
-| Home | `index.html` | `/` |
+| Studio home | `index.html` | `/` |
+| OnTrack | `ontrack.html` | `/ontrack` |
 | Support | `support.html` | `/support` |
 | Privacy policy | `privacy.md` | `/privacy` |
 | Not found | `404.html` | any missing page |
@@ -16,6 +17,12 @@ policy's `##` headings. Styles are in `assets/site.css`, and the fonts (Archivo
 and JetBrains Mono, both SIL Open Font License) are served from `assets/fonts/`,
 so the site makes no requests to other servers.
 
+The home page is about the studio and leads to OnTrack. Link the apps and their
+store listings (the Play Console's **Website** field, App Store Connect's
+**Marketing URL**) to <https://corefirststudios.com/ontrack>, not the root.
+The studio has no logo yet, so the header and footer show its name as text;
+the green mark in `assets/img/` (and the favicon) is OnTrack's.
+
 ## Editing
 
 - **Text on a page:** edit the file on GitHub (pencil icon) and commit. The site
@@ -24,8 +31,10 @@ so the site makes no requests to other servers.
   `play-store/privacy-policy.md` in the OnTrack-Android repo, below its front
   matter (the lines between the two `---`). When the policy changes, update
   both, the in-app Privacy screen, and the `ontrack-ios-privacy` README together.
-- **Google Play link:** when the listing is live, replace the "Coming soon to
-  Google Play" badge in `index.html` with a link to it.
+- **Store links:** when a listing is live, replace its "Coming soon to the App
+  Store" or "Coming soon to Google Play" line with a link to it. Each appears
+  in `ontrack.html` (hero and the iPhone and Android cards), in `index.html`
+  (the OnTrack card) and in the first question in `support.html`.
 
 To preview locally: `bundle exec jekyll serve` or `jekyll serve`, then open
 <http://localhost:4000>.

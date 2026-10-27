@@ -33,12 +33,9 @@
 
   <header class="site-header">
     <div class="wrap bar">
-      <a class="brand" href="/">
-        <img src="/assets/img/mark.png" alt="" width="28" height="28">
-        <span>Core First Studios</span>
-      </a>
+      <a class="brand" href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Core First Studios</a>
       <nav class="site-nav" aria-label="Main">
-        <a href="/#ontrack">OnTrack</a>
+        <a href="/ontrack"{% if page.url == "/ontrack.html" %} aria-current="page"{% endif %}>OnTrack</a>
         <a href="/support"{% if page.url == "/support.html" %} aria-current="page"{% endif %}>Support</a>
         <a href="/privacy"{% if page.url == "/privacy.html" %} aria-current="page"{% endif %}>Privacy</a>
       </nav>
@@ -51,11 +48,9 @@
 
   <footer class="site-footer">
     <div class="wrap foot">
-      <a class="brand" href="/">
-        <img src="/assets/img/mark.png" alt="" width="24" height="24">
-        <span>Core First Studios</span>
-      </a>
+      <a class="brand" href="/">Core First Studios</a>
       <nav aria-label="Footer">
+        <a href="/ontrack">OnTrack</a>
         <a href="/support">Support</a>
         <a href="/privacy">Privacy policy</a>
         <a href="mailto:{{ site.email }}">{{ site.email }}</a>

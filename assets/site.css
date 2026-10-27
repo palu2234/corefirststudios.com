@@ -110,14 +110,13 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* Header and footer */
 .site-header { background: var(--night); color: var(--night-ink); border-bottom: 1px solid var(--night-line); }
-.home .site-header { border-bottom-color: transparent; }
+.has-hero .site-header { border-bottom-color: transparent; }
 .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1.5rem; padding-block: 1rem; }
+/* Text only until the studio has its own mark; the green one is OnTrack's. */
 .brand {
-  display: inline-flex; align-items: center; gap: 0.6rem;
   color: var(--night-ink); text-decoration: none;
   font-weight: 750; font-stretch: 112%; letter-spacing: -0.01em; font-size: 1.05rem;
 }
-.brand img { width: 28px; height: 28px; }
 .site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
 .site-nav a { color: var(--night-muted); text-decoration: none; font-weight: 500; font-size: 0.95rem; padding-block: 0.3rem; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--night-ink); }
@@ -125,7 +124,6 @@ h1, h2, h3 { text-wrap: balance; }
 
 .site-footer { background: var(--night); color: var(--night-muted); padding-block: 2.75rem; }
 .foot { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 1.25rem 2rem; }
-.foot .brand img { width: 24px; height: 24px; }
 .foot nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.5rem 1.5rem; }
 .foot nav a { color: var(--night-ink); text-decoration: none; font-size: 0.95rem; overflow-wrap: anywhere; }
 .foot nav a:hover { text-decoration: underline; }
@@ -166,7 +164,17 @@ h1, h2, h3 { text-wrap: balance; }
   padding: 0.75rem 1.25rem;
   font-weight: 650; font-size: 0.98rem; color: var(--night-ink);
 }
-.soon .dot { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px var(--green-glow); }
+.dot { flex: none; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px var(--green-glow); }
+.stores { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border-radius: 999px; padding: 0.8rem 1.4rem;
+  background: var(--green); color: var(--night);
+  font-weight: 700; font-size: 0.98rem; text-decoration: none;
+}
+.btn:hover { background: var(--night-ink); }
+.app-id { display: flex; align-items: center; gap: 0.6rem; }
+.app-id img { width: 22px; height: 22px; }
 .text-link { color: var(--night-ink); font-weight: 600; text-decoration: none; border-bottom: 1.5px solid var(--night-line); padding-bottom: 2px; }
 .text-link:hover { border-bottom-color: var(--green); }
 @media (max-width: 880px) {
@@ -220,6 +228,31 @@ h1, h2, h3 { text-wrap: balance; }
   .hr-chip { right: 0.5rem; }
 }
 
+/* Home page: the app card beside the studio intro. The title link stretches
+   over the whole card so all of it is clickable. */
+.app-card {
+  position: relative; justify-self: center;
+  width: 100%; max-width: 25rem;
+  background: var(--night-2); border: 1px solid var(--night-line); border-radius: 22px;
+  padding: 1.75rem;
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.2s;
+}
+.app-card:hover, .app-card:focus-within { border-color: var(--green); }
+.app-card p { margin: 0; }
+.app-card img { width: 64px; height: 64px; margin-bottom: 1.5rem; }
+.app-kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--night-muted); }
+.app-card h2 { margin: 0.2rem 0 0.6rem; font-size: 2.1rem; line-height: 1.05; font-weight: 800; font-stretch: 114%; letter-spacing: -0.02em; }
+.app-card h2 a { color: var(--night-ink); text-decoration: none; }
+.app-card h2 a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.app-card h2 a:focus-visible { outline: none; }
+.app-card .app-line { color: var(--night-muted); }
+.app-card .app-platforms { margin-top: 1rem; font-family: var(--font-mono); font-size: 0.8rem; color: var(--green); }
+.app-stores { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; gap: 0.5rem; }
+.app-stores li { display: flex; align-items: center; gap: 0.65rem; padding: 0.65rem 0.9rem; border-radius: 12px; background: var(--night-3); font-weight: 600; font-size: 0.92rem; }
+.app-stores li::before { content: ""; flex: none; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--green); }
+.app-card .app-more { margin-top: 1.25rem; font-weight: 650; color: var(--green); }
+
 /* Sections */
 .section { padding-block: clamp(3.5rem, 8vw, 6rem); }
 .section-tight { padding-top: 1rem; }
@@ -243,7 +276,7 @@ h1, h2, h3 { text-wrap: balance; }
 @media (max-width: 900px) { .features { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .features { grid-template-columns: minmax(0, 1fr); gap: 2.25rem; } }
 
-.data { background: var(--wash); }
+.wash { background: var(--wash); }
 .data-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 2.5rem 4rem; align-items: start; }
 .arrow-link { display: inline-block; margin-top: 1.5rem; font-weight: 650; }
 .data-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; }
@@ -263,6 +296,17 @@ h1, h2, h3 { text-wrap: balance; }
 .studio-grid h2 { margin: 0; }
 .studio-grid p { margin: 0; font-size: 1.15rem; max-width: 40rem; }
 @media (max-width: 760px) { .studio-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* iPhone and Android */
+.platform-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.platform { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 1.75rem 1.75rem 2rem; }
+.platform-store {
+  display: flex; align-items: center; gap: 0.65rem; margin: 0 0 0.9rem;
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--link);
+}
+.platform h3 { margin: 0 0 1.1rem; font-size: 1.4rem; line-height: 1.2; font-weight: 750; font-stretch: 108%; }
+.platform .ticks { margin: 0; color: var(--ink-2); }
+@media (max-width: 760px) { .platform-grid { grid-template-columns: minmax(0, 1fr); } }
 
 /* OnTrack Pro */
 .pro-band { background: var(--night); color: var(--night-ink); }
